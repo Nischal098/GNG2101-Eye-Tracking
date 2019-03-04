@@ -13,6 +13,7 @@ namespace EyeTracking {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Speech::Synthesis;
 
 	/// <summary>
 	/// Summary for MyForm
@@ -26,7 +27,8 @@ namespace EyeTracking {
 		{
 			InitializeComponent();
 			//
-
+			//SpeechSynthesizer^synth = gcnew SpeechSynthesizer();
+			//synth->Speak("Hello World");
 			//TODO: Add the constructor code here
 			//
 		}
@@ -55,7 +57,9 @@ namespace EyeTracking {
 		/// <summary>
 		/// Required designer variable.
 		int timerCounter;
-		int selectedButton;
+	private: System::Windows::Forms::TextBox^  txtTextToSpeech;
+	private: System::Windows::Forms::Label^  lblTextToSpeech;
+			 int selectedButton;
 		/// </summary>
 
 
@@ -74,6 +78,8 @@ namespace EyeTracking {
 			this->btnQuit = (gcnew System::Windows::Forms::Button());
 			this->btnRing = (gcnew System::Windows::Forms::Button());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->txtTextToSpeech = (gcnew System::Windows::Forms::TextBox());
+			this->lblTextToSpeech = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// btnEmail
@@ -171,6 +177,34 @@ namespace EyeTracking {
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
 			// 
+			// txtTextToSpeech
+			// 
+			this->txtTextToSpeech->BackColor = System::Drawing::Color::Black;
+			this->txtTextToSpeech->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtTextToSpeech->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtTextToSpeech->ForeColor = System::Drawing::Color::White;
+			this->txtTextToSpeech->Location = System::Drawing::Point(1043, 420);
+			this->txtTextToSpeech->Multiline = true;
+			this->txtTextToSpeech->Name = L"txtTextToSpeech";
+			this->txtTextToSpeech->Size = System::Drawing::Size(486, 93);
+			this->txtTextToSpeech->TabIndex = 5;
+			this->txtTextToSpeech->Text = L"Type Your Text Here";
+			this->txtTextToSpeech->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// lblTextToSpeech
+			// 
+			this->lblTextToSpeech->AutoSize = true;
+			this->lblTextToSpeech->BackColor = System::Drawing::Color::Transparent;
+			this->lblTextToSpeech->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblTextToSpeech->ForeColor = System::Drawing::Color::White;
+			this->lblTextToSpeech->Location = System::Drawing::Point(1141, 361);
+			this->lblTextToSpeech->Name = L"lblTextToSpeech";
+			this->lblTextToSpeech->Size = System::Drawing::Size(304, 27);
+			this->lblTextToSpeech->TabIndex = 6;
+			this->lblTextToSpeech->Text = L"Type text here in this box";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -179,6 +213,8 @@ namespace EyeTracking {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1548, 660);
+			this->Controls->Add(this->lblTextToSpeech);
+			this->Controls->Add(this->txtTextToSpeech);
 			this->Controls->Add(this->btnRing);
 			this->Controls->Add(this->btnQuit);
 			this->Controls->Add(this->btnSettings);
@@ -191,6 +227,7 @@ namespace EyeTracking {
 			this->Text = L"Eye Tracking";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -244,7 +281,11 @@ namespace EyeTracking {
 	}
 	private: System::Void btnTextToSpeech_Click(System::Object^  sender, System::EventArgs^  e) {
 		btnTextToSpeech->ForeColor = ForeColor.Lime;
-		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_SYNC);
+
+		SpeechSynthesizer^synth = gcnew SpeechSynthesizer();
+		synth->Speak(txtTextToSpeech->Text);
+
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
 		btnSettings->ForeColor = ForeColor.Lime;
