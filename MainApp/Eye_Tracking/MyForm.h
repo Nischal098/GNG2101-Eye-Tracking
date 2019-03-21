@@ -5,7 +5,8 @@ namespace EyeTracking {
 	#include <Windows.h>
 	//#include <string>
 	#pragma comment(lib, "Winmm.lib")
-	using namespace std;
+	//#include "MyForm2.h"
+	//using namespace std;
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -14,6 +15,10 @@ namespace EyeTracking {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Speech::Synthesis;
+
+
+	#include "MyForm2.h"
+	//#include "MyForm.h"
 
 	/// <summary>
 	/// Summary for MyForm
@@ -100,7 +105,7 @@ namespace EyeTracking {
 			this->btnEmail->ForeColor = System::Drawing::Color::White;
 			this->btnEmail->Location = System::Drawing::Point(3, 3);
 			this->btnEmail->Name = L"btnEmail";
-			this->btnEmail->Size = System::Drawing::Size(279, 173);
+			this->btnEmail->Size = System::Drawing::Size(280, 173);
 			this->btnEmail->TabIndex = 0;
 			this->btnEmail->Text = L"Email";
 			this->btnEmail->UseVisualStyleBackColor = false;
@@ -117,9 +122,9 @@ namespace EyeTracking {
 			this->btnTextToSpeech->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnTextToSpeech->ForeColor = System::Drawing::Color::White;
-			this->btnTextToSpeech->Location = System::Drawing::Point(288, 3);
+			this->btnTextToSpeech->Location = System::Drawing::Point(289, 3);
 			this->btnTextToSpeech->Name = L"btnTextToSpeech";
-			this->btnTextToSpeech->Size = System::Drawing::Size(279, 173);
+			this->btnTextToSpeech->Size = System::Drawing::Size(280, 173);
 			this->btnTextToSpeech->TabIndex = 1;
 			this->btnTextToSpeech->Text = L"Text to Speech";
 			this->btnTextToSpeech->UseVisualStyleBackColor = false;
@@ -138,7 +143,7 @@ namespace EyeTracking {
 			this->btnSettings->ForeColor = System::Drawing::Color::White;
 			this->btnSettings->Location = System::Drawing::Point(3, 182);
 			this->btnSettings->Name = L"btnSettings";
-			this->btnSettings->Size = System::Drawing::Size(279, 173);
+			this->btnSettings->Size = System::Drawing::Size(280, 173);
 			this->btnSettings->TabIndex = 2;
 			this->btnSettings->Text = L"Settings";
 			this->btnSettings->UseVisualStyleBackColor = false;
@@ -155,9 +160,9 @@ namespace EyeTracking {
 			this->btnQuit->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnQuit->ForeColor = System::Drawing::Color::White;
-			this->btnQuit->Location = System::Drawing::Point(573, 182);
+			this->btnQuit->Location = System::Drawing::Point(575, 182);
 			this->btnQuit->Name = L"btnQuit";
-			this->btnQuit->Size = System::Drawing::Size(282, 173);
+			this->btnQuit->Size = System::Drawing::Size(280, 173);
 			this->btnQuit->TabIndex = 3;
 			this->btnQuit->Text = L"Quit";
 			this->btnQuit->UseVisualStyleBackColor = false;
@@ -174,9 +179,9 @@ namespace EyeTracking {
 			this->btnRing->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnRing->ForeColor = System::Drawing::Color::White;
-			this->btnRing->Location = System::Drawing::Point(573, 3);
+			this->btnRing->Location = System::Drawing::Point(575, 3);
 			this->btnRing->Name = L"btnRing";
-			this->btnRing->Size = System::Drawing::Size(282, 173);
+			this->btnRing->Size = System::Drawing::Size(280, 173);
 			this->btnRing->TabIndex = 4;
 			this->btnRing->Text = L"Ring";
 			this->btnRing->UseVisualStyleBackColor = false;
@@ -200,7 +205,7 @@ namespace EyeTracking {
 			this->txtTextToSpeech->Location = System::Drawing::Point(3, 89);
 			this->txtTextToSpeech->Multiline = true;
 			this->txtTextToSpeech->Name = L"txtTextToSpeech";
-			this->txtTextToSpeech->Size = System::Drawing::Size(273, 81);
+			this->txtTextToSpeech->Size = System::Drawing::Size(274, 81);
 			this->txtTextToSpeech->TabIndex = 5;
 			this->txtTextToSpeech->Text = L"Type Your Text Here";
 			this->txtTextToSpeech->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -215,7 +220,7 @@ namespace EyeTracking {
 			this->lblTextToSpeech->ForeColor = System::Drawing::Color::White;
 			this->lblTextToSpeech->Location = System::Drawing::Point(3, 0);
 			this->lblTextToSpeech->Name = L"lblTextToSpeech";
-			this->lblTextToSpeech->Size = System::Drawing::Size(273, 86);
+			this->lblTextToSpeech->Size = System::Drawing::Size(274, 86);
 			this->lblTextToSpeech->TabIndex = 6;
 			this->lblTextToSpeech->Text = L"Type text here in this box";
 			// 
@@ -254,14 +259,14 @@ namespace EyeTracking {
 			this->layoutNestedTextToSpeech->Controls->Add(this->lblTextToSpeech, 0, 0);
 			this->layoutNestedTextToSpeech->Controls->Add(this->txtTextToSpeech, 0, 1);
 			this->layoutNestedTextToSpeech->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->layoutNestedTextToSpeech->Location = System::Drawing::Point(288, 182);
+			this->layoutNestedTextToSpeech->Location = System::Drawing::Point(289, 182);
 			this->layoutNestedTextToSpeech->Name = L"layoutNestedTextToSpeech";
 			this->layoutNestedTextToSpeech->RowCount = 2;
 			this->layoutNestedTextToSpeech->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->layoutNestedTextToSpeech->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
-			this->layoutNestedTextToSpeech->Size = System::Drawing::Size(279, 173);
+			this->layoutNestedTextToSpeech->Size = System::Drawing::Size(280, 173);
 			this->layoutNestedTextToSpeech->TabIndex = 8;
 			// 
 			// MyForm
@@ -346,6 +351,9 @@ namespace EyeTracking {
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
 		btnSettings->ForeColor = ForeColor.Lime;
 		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
+		//MyForm2 ^form2 = gcnew MyForm2();
+		//Application::Run(form2);
+		//this->Hide();
 	}
 	private: System::Void btnRing_Click(System::Object^  sender, System::EventArgs^  e) {
 		btnRing->ForeColor = ForeColor.Lime;
