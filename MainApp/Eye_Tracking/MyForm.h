@@ -34,6 +34,7 @@ namespace EyeTracking {
 			//
 			//SpeechSynthesizer^synth = gcnew SpeechSynthesizer();
 			//synth->Speak("Hello World");
+			Cursor->Hide();
 			//TODO: Add the constructor code here
 			//
 		}
