@@ -104,9 +104,10 @@ namespace EyeTracking {
 			this->btnEmail->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnEmail->ForeColor = System::Drawing::Color::White;
-			this->btnEmail->Location = System::Drawing::Point(3, 3);
+			this->btnEmail->Location = System::Drawing::Point(4, 5);
+			this->btnEmail->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->btnEmail->Name = L"btnEmail";
-			this->btnEmail->Size = System::Drawing::Size(280, 173);
+			this->btnEmail->Size = System::Drawing::Size(421, 227);
 			this->btnEmail->TabIndex = 0;
 			this->btnEmail->Text = L"Email";
 			this->btnEmail->UseVisualStyleBackColor = false;
@@ -123,9 +124,10 @@ namespace EyeTracking {
 			this->btnTextToSpeech->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnTextToSpeech->ForeColor = System::Drawing::Color::White;
-			this->btnTextToSpeech->Location = System::Drawing::Point(289, 3);
+			this->btnTextToSpeech->Location = System::Drawing::Point(433, 5);
+			this->btnTextToSpeech->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->btnTextToSpeech->Name = L"btnTextToSpeech";
-			this->btnTextToSpeech->Size = System::Drawing::Size(280, 173);
+			this->btnTextToSpeech->Size = System::Drawing::Size(421, 227);
 			this->btnTextToSpeech->TabIndex = 1;
 			this->btnTextToSpeech->Text = L"Text to Speech";
 			this->btnTextToSpeech->UseVisualStyleBackColor = false;
@@ -142,9 +144,10 @@ namespace EyeTracking {
 			this->btnSettings->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnSettings->ForeColor = System::Drawing::Color::White;
-			this->btnSettings->Location = System::Drawing::Point(3, 182);
+			this->btnSettings->Location = System::Drawing::Point(4, 242);
+			this->btnSettings->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->btnSettings->Name = L"btnSettings";
-			this->btnSettings->Size = System::Drawing::Size(280, 173);
+			this->btnSettings->Size = System::Drawing::Size(421, 228);
 			this->btnSettings->TabIndex = 2;
 			this->btnSettings->Text = L"Settings";
 			this->btnSettings->UseVisualStyleBackColor = false;
@@ -161,9 +164,10 @@ namespace EyeTracking {
 			this->btnQuit->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnQuit->ForeColor = System::Drawing::Color::White;
-			this->btnQuit->Location = System::Drawing::Point(575, 182);
+			this->btnQuit->Location = System::Drawing::Point(862, 242);
+			this->btnQuit->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->btnQuit->Name = L"btnQuit";
-			this->btnQuit->Size = System::Drawing::Size(280, 173);
+			this->btnQuit->Size = System::Drawing::Size(421, 228);
 			this->btnQuit->TabIndex = 3;
 			this->btnQuit->Text = L"Quit";
 			this->btnQuit->UseVisualStyleBackColor = false;
@@ -180,9 +184,10 @@ namespace EyeTracking {
 			this->btnRing->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnRing->ForeColor = System::Drawing::Color::White;
-			this->btnRing->Location = System::Drawing::Point(575, 3);
+			this->btnRing->Location = System::Drawing::Point(862, 5);
+			this->btnRing->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->btnRing->Name = L"btnRing";
-			this->btnRing->Size = System::Drawing::Size(280, 173);
+			this->btnRing->Size = System::Drawing::Size(421, 227);
 			this->btnRing->TabIndex = 4;
 			this->btnRing->Text = L"Ring";
 			this->btnRing->UseVisualStyleBackColor = false;
@@ -203,10 +208,11 @@ namespace EyeTracking {
 			this->txtTextToSpeech->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtTextToSpeech->ForeColor = System::Drawing::Color::White;
-			this->txtTextToSpeech->Location = System::Drawing::Point(3, 89);
+			this->txtTextToSpeech->Location = System::Drawing::Point(4, 119);
+			this->txtTextToSpeech->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->txtTextToSpeech->Multiline = true;
 			this->txtTextToSpeech->Name = L"txtTextToSpeech";
-			this->txtTextToSpeech->Size = System::Drawing::Size(274, 81);
+			this->txtTextToSpeech->Size = System::Drawing::Size(413, 104);
 			this->txtTextToSpeech->TabIndex = 5;
 			this->txtTextToSpeech->Text = L"Type Your Text Here";
 			this->txtTextToSpeech->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -219,9 +225,10 @@ namespace EyeTracking {
 			this->lblTextToSpeech->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblTextToSpeech->ForeColor = System::Drawing::Color::White;
-			this->lblTextToSpeech->Location = System::Drawing::Point(3, 0);
+			this->lblTextToSpeech->Location = System::Drawing::Point(4, 0);
+			this->lblTextToSpeech->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblTextToSpeech->Name = L"lblTextToSpeech";
-			this->lblTextToSpeech->Size = System::Drawing::Size(274, 86);
+			this->lblTextToSpeech->Size = System::Drawing::Size(413, 114);
 			this->lblTextToSpeech->TabIndex = 6;
 			this->lblTextToSpeech->Text = L"Type text here in this box";
 			// 
@@ -244,11 +251,12 @@ namespace EyeTracking {
 			this->layoutMainForm->Controls->Add(this->btnQuit, 2, 1);
 			this->layoutMainForm->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->layoutMainForm->Location = System::Drawing::Point(0, 0);
+			this->layoutMainForm->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->layoutMainForm->Name = L"layoutMainForm";
 			this->layoutMainForm->RowCount = 2;
 			this->layoutMainForm->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->layoutMainForm->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->layoutMainForm->Size = System::Drawing::Size(858, 358);
+			this->layoutMainForm->Size = System::Drawing::Size(1287, 475);
 			this->layoutMainForm->TabIndex = 7;
 			// 
 			// layoutNestedTextToSpeech
@@ -260,27 +268,29 @@ namespace EyeTracking {
 			this->layoutNestedTextToSpeech->Controls->Add(this->lblTextToSpeech, 0, 0);
 			this->layoutNestedTextToSpeech->Controls->Add(this->txtTextToSpeech, 0, 1);
 			this->layoutNestedTextToSpeech->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->layoutNestedTextToSpeech->Location = System::Drawing::Point(289, 182);
+			this->layoutNestedTextToSpeech->Location = System::Drawing::Point(433, 242);
+			this->layoutNestedTextToSpeech->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->layoutNestedTextToSpeech->Name = L"layoutNestedTextToSpeech";
 			this->layoutNestedTextToSpeech->RowCount = 2;
 			this->layoutNestedTextToSpeech->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->layoutNestedTextToSpeech->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
-			this->layoutNestedTextToSpeech->Size = System::Drawing::Size(280, 173);
+			this->layoutNestedTextToSpeech->Size = System::Drawing::Size(421, 228);
 			this->layoutNestedTextToSpeech->TabIndex = 8;
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(858, 358);
+			this->ClientSize = System::Drawing::Size(1287, 475);
 			this->Controls->Add(this->layoutMainForm);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->MinimizeBox = false;
 			this->Name = L"MyForm";
 			this->Text = L"Eye Tracking";
