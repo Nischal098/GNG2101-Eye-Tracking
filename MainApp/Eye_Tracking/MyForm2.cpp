@@ -10,6 +10,6 @@ using namespace EyeTracking;
 void MainForm2(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	MyForm2 form;
+	EyeTracking::MyForm2 form;
 	Application::Run(%form);
 }

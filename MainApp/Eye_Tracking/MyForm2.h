@@ -2,6 +2,8 @@
 
 namespace EyeTracking {
 
+	#include <Windows.h>
+	#pragma comment(lib, "Winmm.lib")
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -18,7 +20,7 @@ namespace EyeTracking {
 		MyForm2(void)
 		{
 			InitializeComponent();
-			//
+			Cursor->Hide();
 			//TODO: Add the constructor code here
 			//
 		}
@@ -40,7 +42,7 @@ namespace EyeTracking {
 	private: System::Windows::Forms::Button^  btn3;
 	private: System::Windows::Forms::Button^  btn5;
 
-	private: System::Windows::Forms::Timer^  timer1;
+	private: System::Windows::Forms::Timer^  timer2;
 	private: System::Windows::Forms::TableLayoutPanel^  layoutMainForm;
 	private: System::Windows::Forms::Button^  btn4;
 	private: System::Windows::Forms::Button^  btn7;
@@ -62,8 +64,9 @@ namespace EyeTracking {
 		/// <summary>
 		/// Required designer variable.
 		bool isClicked = false;
-
-
+		int selectedButton;
+		int timerCounter;
+	
 		/// </summary>
 
 
@@ -80,7 +83,7 @@ namespace EyeTracking {
 			this->btn2 = (gcnew System::Windows::Forms::Button());
 			this->btn3 = (gcnew System::Windows::Forms::Button());
 			this->btn5 = (gcnew System::Windows::Forms::Button());
-			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->layoutMainForm = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->btn6 = (gcnew System::Windows::Forms::Button());
 			this->btn4 = (gcnew System::Windows::Forms::Button());
@@ -108,6 +111,8 @@ namespace EyeTracking {
 			this->btn1->Text = L"A-G";
 			this->btn1->UseVisualStyleBackColor = false;
 			this->btn1->Click += gcnew System::EventHandler(this, &MyForm2::btn1_Click);
+			this->btn1->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn1_MouseEnter);
+			this->btn1->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn1_MouseLeave);
 			// 
 			// btn2
 			// 
@@ -125,6 +130,8 @@ namespace EyeTracking {
 			this->btn2->Text = L"H-N";
 			this->btn2->UseVisualStyleBackColor = false;
 			this->btn2->Click += gcnew System::EventHandler(this, &MyForm2::btn2_Click);
+			this->btn2->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn2_MouseEnter);
+			this->btn2->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn2_MouseLeave);
 			// 
 			// btn3
 			// 
@@ -142,6 +149,8 @@ namespace EyeTracking {
 			this->btn3->Text = L"O-U";
 			this->btn3->UseVisualStyleBackColor = false;
 			this->btn3->Click += gcnew System::EventHandler(this, &MyForm2::btn3_Click);
+			this->btn3->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn3_MouseEnter);
+			this->btn3->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn3_MouseLeave);
 			// 
 			// btn5
 			// 
@@ -159,10 +168,13 @@ namespace EyeTracking {
 			this->btn5->Text = L"0-6";
 			this->btn5->UseVisualStyleBackColor = false;
 			this->btn5->Click += gcnew System::EventHandler(this, &MyForm2::btn5_Click);
+			this->btn5->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn5_MouseEnter);
+			this->btn5->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn5_MouseLeave);
 			// 
-			// timer1
+			// timer2
 			// 
-			this->timer1->Interval = 1000;
+			this->timer2->Interval = 500;
+			this->timer2->Tick += gcnew System::EventHandler(this, &MyForm2::timer2_Tick);
 			// 
 			// layoutMainForm
 			// 
@@ -177,10 +189,10 @@ namespace EyeTracking {
 				25)));
 			this->layoutMainForm->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				25)));
-			this->layoutMainForm->Controls->Add(this->btn6, 0, 1);
+			this->layoutMainForm->Controls->Add(this->btn6, 1, 1);
 			this->layoutMainForm->Controls->Add(this->btn4, 3, 0);
-			this->layoutMainForm->Controls->Add(this->btn7, 0, 1);
-			this->layoutMainForm->Controls->Add(this->btn8, 0, 1);
+			this->layoutMainForm->Controls->Add(this->btn7, 2, 1);
+			this->layoutMainForm->Controls->Add(this->btn8, 3, 1);
 			this->layoutMainForm->Controls->Add(this->btn1, 0, 0);
 			this->layoutMainForm->Controls->Add(this->btn2, 1, 0);
 			this->layoutMainForm->Controls->Add(this->btn3, 2, 0);
@@ -212,6 +224,8 @@ namespace EyeTracking {
 			this->btn6->Text = L"7-9";
 			this->btn6->UseVisualStyleBackColor = false;
 			this->btn6->Click += gcnew System::EventHandler(this, &MyForm2::btn6_Click);
+			this->btn6->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn6_MouseEnter);
+			this->btn6->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn6_MouseLeave);
 			// 
 			// btn4
 			// 
@@ -229,6 +243,8 @@ namespace EyeTracking {
 			this->btn4->Text = L"V-Z";
 			this->btn4->UseVisualStyleBackColor = false;
 			this->btn4->Click += gcnew System::EventHandler(this, &MyForm2::btn4_Click);
+			this->btn4->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn4_MouseEnter);
+			this->btn4->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn4_MouseLeave);
 			// 
 			// btn7
 			// 
@@ -246,6 +262,8 @@ namespace EyeTracking {
 			this->btn7->Text = L"Specials";
 			this->btn7->UseVisualStyleBackColor = false;
 			this->btn7->Click += gcnew System::EventHandler(this, &MyForm2::btn7_Click);
+			this->btn7->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn7_MouseEnter);
+			this->btn7->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn7_MouseLeave);
 			// 
 			// btn8
 			// 
@@ -263,6 +281,8 @@ namespace EyeTracking {
 			this->btn8->Text = L"Specials 2";
 			this->btn8->UseVisualStyleBackColor = false;
 			this->btn8->Click += gcnew System::EventHandler(this, &MyForm2::btn8_Click);
+			this->btn8->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn8_MouseEnter);
+			this->btn8->MouseLeave += gcnew System::EventHandler(this, &MyForm2::btn8_MouseLeave);
 			// 
 			// lblOutput
 			// 
@@ -298,7 +318,118 @@ namespace EyeTracking {
 
 		}
 #pragma endregion
+		//
+		private: System::Void MyForm2_Load(System::Object^  sender, System::EventArgs^  e) {
+		}
+
+		private: System::Void btn1_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn1->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 1;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+				
+		private: System::Void btn2_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn2->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 2;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+
+		private: System::Void btn3_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn3->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 3;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+
+		private: System::Void btn4_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn4->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 4;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+
+		private: System::Void btn5_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn5->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 5;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+		
+		private: System::Void btn6_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn6->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 6;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+
+		private: System::Void btn7_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn7->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 7;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+
+		private: System::Void btn8_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+			btn8->BackColor = BackColor.PaleVioletRed;
+			selectedButton = 8;
+			PlaySound(TEXT("MenuSelect.wav"), NULL, SND_ASYNC);
+			timer2->Start();
+		}
+		//
+
+	private: System::Void btn1_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn1->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn2_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn2->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn3_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn3->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn4_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn4->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn5_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn5->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn6_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn6->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn7_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn7->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+	private: System::Void btn8_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+		btn8->BackColor = BackColor.Transparent;
+		selectedButton = 0;
+		timer2->Stop();
+		resetTimerCounter();
+	}
+		//
 	private: System::Void btn1_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			setDefaultKeys();
 			isClicked = false;
@@ -313,12 +444,12 @@ namespace EyeTracking {
 			btn6->Text = "E";
 			btn7->Text = "F";
 			btn8->Text = "G";
-
 		}
 
 
 	}
 	private: System::Void btn2_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn2->Text->ToString();
 		}
@@ -337,6 +468,7 @@ namespace EyeTracking {
 
 	}
 	private: System::Void btn3_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn3->Text->ToString();
 		}
@@ -352,6 +484,7 @@ namespace EyeTracking {
 		}
 	}
 	private: System::Void btn4_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn4->Text->ToString();
 		}
@@ -367,6 +500,7 @@ namespace EyeTracking {
 		}
 	}
 	private: System::Void btn5_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn5->Text->ToString();
 		}
@@ -382,6 +516,7 @@ namespace EyeTracking {
 		}
 	}
 	private: System::Void btn6_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn6->Text->ToString();
 		}
@@ -398,6 +533,7 @@ namespace EyeTracking {
 	}
 
 	private: System::Void btn7_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn7->Text->ToString();
 		}
@@ -407,13 +543,14 @@ namespace EyeTracking {
 			btn3->Text = ",";
 			btn4->Text = "$";
 			btn5->Text = "!";
-			btn6->Text = "+";
-			btn7->Text = "-";
-			btn8->Text = "'";
+			btn6->Text = "?";
+			btn7->Text = "'";
+			btn8->Text = "-";
 		}
 	}
 
 	private: System::Void btn8_Click(System::Object^  sender, System::EventArgs^  e) {
+		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
 			lblOutput->Text += btn8->Text->ToString();
 		}
@@ -421,9 +558,9 @@ namespace EyeTracking {
 			isClicked = true; btn1->Text = "Back";
 			btn2->Text = "@";
 			btn3->Text = "#";
-			btn4->Text = "%";
-			btn5->Text = "^";
-			btn6->Text = "&";
+			btn4->Text = ";";
+			btn5->Text = ":";
+			btn6->Text = "/";
 			btn7->Text = "(";
 			btn8->Text = ")";
 		}
@@ -438,8 +575,48 @@ namespace EyeTracking {
 		btn6->Text = "7-9";
 		btn7->Text = "Specials";
 		btn8->Text = "Specials 2";
+	}
+			 private: System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e) {
+				 timerCounter++;
 
-		
+				 if (timerCounter == 2)
+				 {
+					 switch (selectedButton)
+					 {
+					 case 1:
+						 btn1->PerformClick();
+						 break;
+					 case 2:
+						 btn2->PerformClick();
+						 break;
+					 case 3:
+						 btn3->PerformClick();
+						 break;
+					 case 4:
+						 btn4->PerformClick();
+						 break;
+					 case 5:
+						 btn5->PerformClick();
+						 break;
+					 case 6:
+						 btn6->PerformClick();
+						 break;
+					 case 7:
+						 btn7->PerformClick();
+						 break;
+					 case 8:
+						 btn8->PerformClick();
+						 break;
+					 case 0:
+						 break;
+					 default:
+						 break;
+					 }
+				 }
+			 }
+					  //---------------------------------------------------------------------------------------
+	private: Void resetTimerCounter() {
+		timerCounter = 0;
 	}
 	};
 }
