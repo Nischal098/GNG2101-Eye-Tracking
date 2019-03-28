@@ -4,12 +4,14 @@ namespace EyeTracking {
 
 	#include <Windows.h>
 	#pragma comment(lib, "Winmm.lib")
+#include "MyForm.h"
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 
 	/// <summary>
 	/// Summary for MyForm2
@@ -66,6 +68,7 @@ namespace EyeTracking {
 		bool isClicked = false;
 		int selectedButton;
 		int timerCounter;
+	
 	
 		/// </summary>
 
@@ -278,7 +281,7 @@ namespace EyeTracking {
 			this->btn8->Name = L"btn8";
 			this->btn8->Size = System::Drawing::Size(351, 390);
 			this->btn8->TabIndex = 10;
-			this->btn8->Text = L"Specials 2";
+			this->btn8->Text = L"Return";
 			this->btn8->UseVisualStyleBackColor = false;
 			this->btn8->Click += gcnew System::EventHandler(this, &MyForm2::btn8_Click);
 			this->btn8->MouseEnter += gcnew System::EventHandler(this, &MyForm2::btn8_MouseEnter);
@@ -495,8 +498,8 @@ namespace EyeTracking {
 			btn4->Text = "X";
 			btn5->Text = "Y";
 			btn6->Text = "Z";
-			btn7->Text = " ";
-			btn8->Text = " ";
+			btn7->Text = "(space)";
+			btn8->Text = "(delete)";
 		}
 	}
 	private: System::Void btn5_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -535,7 +538,13 @@ namespace EyeTracking {
 	private: System::Void btn7_Click(System::Object^  sender, System::EventArgs^  e) {
 		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
-			lblOutput->Text += btn7->Text->ToString();
+			if (btn7->Text == ("(space)")) {
+				
+				lblOutput->Text += " ";
+			}
+			else {
+				lblOutput->Text += btn7->Text->ToString();
+			}
 		}
 		else {
 			isClicked = true; btn1->Text = "Back";
@@ -552,17 +561,18 @@ namespace EyeTracking {
 	private: System::Void btn8_Click(System::Object^  sender, System::EventArgs^  e) {
 		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
 		if (isClicked) {
-			lblOutput->Text += btn8->Text->ToString();
+			if (btn8->Text == ("(delete)")) {
+				lblOutput->Text = "";
+			}
+			else {
+				lblOutput->Text += btn8->Text->ToString();
+			}
+			
 		}
 		else {
-			isClicked = true; btn1->Text = "Back";
-			btn2->Text = "@";
-			btn3->Text = "#";
-			btn4->Text = ";";
-			btn5->Text = ":";
-			btn6->Text = "/";
-			btn7->Text = "(";
-			btn8->Text = ")";
+			isClicked = true; 
+			this->Close();
+
 		}
 	}
 
@@ -574,7 +584,7 @@ namespace EyeTracking {
 		btn5->Text = "0-6";
 		btn6->Text = "7-9";
 		btn7->Text = "Specials";
-		btn8->Text = "Specials 2";
+		btn8->Text = "Return";
 	}
 			 private: System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e) {
 				 timerCounter++;
@@ -617,6 +627,15 @@ namespace EyeTracking {
 					  //---------------------------------------------------------------------------------------
 	private: Void resetTimerCounter() {
 		timerCounter = 0;
+	}
+
+	public: property System::String^ returnVal {
+		System::String^ get() {
+			return lblOutput->Text;
+		}
+		void set(System::String^ text) {
+			lblOutput->Text = text;
+		}
 	}
 	};
 }

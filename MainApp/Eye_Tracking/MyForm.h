@@ -1,11 +1,16 @@
-#pragma once
+
 
 namespace EyeTracking {
 
+#pragma once
 	#include <Windows.h>
 	//#include <string>
 	#pragma comment(lib, "Winmm.lib")
-	//#include "MyForm2.h"
+#include "MyForm2.h"
+
+
+
+
 	//using namespace std;
 
 	using namespace System;
@@ -16,8 +21,6 @@ namespace EyeTracking {
 	using namespace System::Drawing;
 	using namespace System::Speech::Synthesis;
 
-
-	#include "MyForm2.h"
 	//#include "MyForm.h"
 
 	/// <summary>
@@ -362,9 +365,13 @@ namespace EyeTracking {
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
 		btnSettings->ForeColor = ForeColor.Lime;
 		PlaySound(TEXT("MenuClick.wav"), NULL, SND_ASYNC);
-		//MyForm2 ^form2 = gcnew MyForm2();
-		//Application::Run(form2);
-		//this->Hide();
+
+		
+		
+		MyForm2^ frm = gcnew MyForm2();
+		frm->Show();
+		txtTextToSpeech->Text = frm->returnVal;
+		
 	}
 	private: System::Void btnRing_Click(System::Object^  sender, System::EventArgs^  e) {
 		btnRing->ForeColor = ForeColor.Lime;

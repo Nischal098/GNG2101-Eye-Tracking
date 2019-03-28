@@ -1,5 +1,6 @@
 ﻿  MyForm.cpp
-  MyForm2.cpp
-  Generating Code...
-  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Eye_Tracking.vcxproj -> C:\Users\Justin\Documents\GitHub\GNG2101-Eye-Tracking\MainApp\Debug\Eye_Tracking.exe
+c:\users\justin\documents\github\gng2101-eye-tracking\mainapp\eye_tracking\myform.h(371): error C2065: 'MyForm2': undeclared identifier
+c:\users\justin\documents\github\gng2101-eye-tracking\mainapp\eye_tracking\myform.h(371): error C2065: 'frm': undeclared identifier
+c:\users\justin\documents\github\gng2101-eye-tracking\mainapp\eye_tracking\myform.h(371): error C2061: syntax error: identifier 'MyForm2'
+c:\users\justin\documents\github\gng2101-eye-tracking\mainapp\eye_tracking\myform.h(372): error C2065: 'frm': undeclared identifier
+c:\users\justin\documents\github\gng2101-eye-tracking\mainapp\eye_tracking\myform.h(373): error C2065: 'frm': undeclared identifier

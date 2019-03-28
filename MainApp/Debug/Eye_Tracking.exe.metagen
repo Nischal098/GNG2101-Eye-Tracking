@@ -20,9 +20,22 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class EyeTracking.EyeTracking.MyForm2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String returnVal 'get set' : 
+  Methods:
+    get_returnVal(): PrivateScope, Public, HideBySig, SpecialName
+    set_returnVal(String): PrivateScope, Public, HideBySig, SpecialName
 Class EyeTracking.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class EyeTracking.EyeTracking.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class EyeTracking.MyForm2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String returnVal 'get set' : 
+  Methods:
+    get_returnVal(): PrivateScope, Public, HideBySig, SpecialName
+    set_returnVal(String): PrivateScope, Public, HideBySig, SpecialName
