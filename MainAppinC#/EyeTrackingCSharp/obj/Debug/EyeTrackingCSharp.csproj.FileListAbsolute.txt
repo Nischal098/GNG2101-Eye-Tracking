@@ -1,0 +1,11 @@
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\bin\Debug\EyeTrackingCSharp.exe.config
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\bin\Debug\EyeTrackingCSharp.exe
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\bin\Debug\EyeTrackingCSharp.pdb
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.csprojAssemblyReference.cache
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.Form1.resources
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.Form2.resources
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.Properties.Resources.resources
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.csproj.GenerateResource.cache
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.exe
+C:\Users\Nischal\Desktop\Uottawa\Git Projects\Year 2 Semester 2\GNG2101-Eye-Tracking\MainAppinC#\EyeTrackingCSharp\obj\Debug\EyeTrackingCSharp.pdb

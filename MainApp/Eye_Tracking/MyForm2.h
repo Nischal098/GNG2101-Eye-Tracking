@@ -106,10 +106,9 @@ namespace EyeTracking {
 			this->btn1->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn1->ForeColor = System::Drawing::Color::White;
-			this->btn1->Location = System::Drawing::Point(4, 5);
-			this->btn1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn1->Location = System::Drawing::Point(3, 3);
 			this->btn1->Name = L"btn1";
-			this->btn1->Size = System::Drawing::Size(349, 390);
+			this->btn1->Size = System::Drawing::Size(232, 254);
 			this->btn1->TabIndex = 0;
 			this->btn1->Text = L"A-G";
 			this->btn1->UseVisualStyleBackColor = false;
@@ -125,10 +124,9 @@ namespace EyeTracking {
 			this->btn2->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn2->ForeColor = System::Drawing::Color::White;
-			this->btn2->Location = System::Drawing::Point(361, 5);
-			this->btn2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn2->Location = System::Drawing::Point(241, 3);
 			this->btn2->Name = L"btn2";
-			this->btn2->Size = System::Drawing::Size(349, 390);
+			this->btn2->Size = System::Drawing::Size(232, 254);
 			this->btn2->TabIndex = 1;
 			this->btn2->Text = L"H-N";
 			this->btn2->UseVisualStyleBackColor = false;
@@ -144,10 +142,9 @@ namespace EyeTracking {
 			this->btn3->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn3->ForeColor = System::Drawing::Color::White;
-			this->btn3->Location = System::Drawing::Point(718, 5);
-			this->btn3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn3->Location = System::Drawing::Point(479, 3);
 			this->btn3->Name = L"btn3";
-			this->btn3->Size = System::Drawing::Size(349, 390);
+			this->btn3->Size = System::Drawing::Size(232, 254);
 			this->btn3->TabIndex = 4;
 			this->btn3->Text = L"O-U";
 			this->btn3->UseVisualStyleBackColor = false;
@@ -163,10 +160,9 @@ namespace EyeTracking {
 			this->btn5->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn5->ForeColor = System::Drawing::Color::White;
-			this->btn5->Location = System::Drawing::Point(4, 405);
-			this->btn5->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn5->Location = System::Drawing::Point(3, 263);
 			this->btn5->Name = L"btn5";
-			this->btn5->Size = System::Drawing::Size(349, 390);
+			this->btn5->Size = System::Drawing::Size(232, 254);
 			this->btn5->TabIndex = 2;
 			this->btn5->Text = L"0-6";
 			this->btn5->UseVisualStyleBackColor = false;
@@ -202,14 +198,14 @@ namespace EyeTracking {
 			this->layoutMainForm->Controls->Add(this->btn5, 0, 1);
 			this->layoutMainForm->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->layoutMainForm->Location = System::Drawing::Point(0, 0);
-			this->layoutMainForm->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->layoutMainForm->Name = L"layoutMainForm";
 			this->layoutMainForm->RowCount = 2;
 			this->layoutMainForm->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->layoutMainForm->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->layoutMainForm->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 31)));
-			this->layoutMainForm->Size = System::Drawing::Size(1430, 800);
+			this->layoutMainForm->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
+			this->layoutMainForm->Size = System::Drawing::Size(953, 520);
 			this->layoutMainForm->TabIndex = 8;
+			this->layoutMainForm->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm2::layoutMainForm_Paint);
 			// 
 			// btn6
 			// 
@@ -219,10 +215,9 @@ namespace EyeTracking {
 			this->btn6->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn6->ForeColor = System::Drawing::Color::White;
-			this->btn6->Location = System::Drawing::Point(361, 405);
-			this->btn6->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn6->Location = System::Drawing::Point(241, 263);
 			this->btn6->Name = L"btn6";
-			this->btn6->Size = System::Drawing::Size(349, 390);
+			this->btn6->Size = System::Drawing::Size(232, 254);
 			this->btn6->TabIndex = 12;
 			this->btn6->Text = L"7-9";
 			this->btn6->UseVisualStyleBackColor = false;
@@ -238,10 +233,9 @@ namespace EyeTracking {
 			this->btn4->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn4->ForeColor = System::Drawing::Color::White;
-			this->btn4->Location = System::Drawing::Point(1075, 5);
-			this->btn4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn4->Location = System::Drawing::Point(717, 3);
 			this->btn4->Name = L"btn4";
-			this->btn4->Size = System::Drawing::Size(351, 390);
+			this->btn4->Size = System::Drawing::Size(233, 254);
 			this->btn4->TabIndex = 9;
 			this->btn4->Text = L"V-Z";
 			this->btn4->UseVisualStyleBackColor = false;
@@ -257,10 +251,9 @@ namespace EyeTracking {
 			this->btn7->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn7->ForeColor = System::Drawing::Color::White;
-			this->btn7->Location = System::Drawing::Point(718, 405);
-			this->btn7->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn7->Location = System::Drawing::Point(479, 263);
 			this->btn7->Name = L"btn7";
-			this->btn7->Size = System::Drawing::Size(349, 390);
+			this->btn7->Size = System::Drawing::Size(232, 254);
 			this->btn7->TabIndex = 11;
 			this->btn7->Text = L"Specials";
 			this->btn7->UseVisualStyleBackColor = false;
@@ -276,10 +269,9 @@ namespace EyeTracking {
 			this->btn8->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn8->ForeColor = System::Drawing::Color::White;
-			this->btn8->Location = System::Drawing::Point(1075, 405);
-			this->btn8->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->btn8->Location = System::Drawing::Point(717, 263);
 			this->btn8->Name = L"btn8";
-			this->btn8->Size = System::Drawing::Size(351, 390);
+			this->btn8->Size = System::Drawing::Size(233, 254);
 			this->btn8->TabIndex = 10;
 			this->btn8->Text = L"Return";
 			this->btn8->UseVisualStyleBackColor = false;
@@ -296,23 +288,22 @@ namespace EyeTracking {
 				static_cast<System::Byte>(0)));
 			this->lblOutput->ForeColor = System::Drawing::Color::White;
 			this->lblOutput->Location = System::Drawing::Point(0, 0);
-			this->lblOutput->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblOutput->Name = L"lblOutput";
-			this->lblOutput->Size = System::Drawing::Size(151, 37);
+			this->lblOutput->Size = System::Drawing::Size(100, 25);
 			this->lblOutput->TabIndex = 9;
 			this->lblOutput->Text = L"Output = ";
+			this->lblOutput->Click += gcnew System::EventHandler(this, &MyForm2::lblOutput_Click);
 			// 
 			// MyForm2
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1430, 800);
+			this->ClientSize = System::Drawing::Size(953, 520);
 			this->Controls->Add(this->lblOutput);
 			this->Controls->Add(this->layoutMainForm);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"MyForm2";
 			this->Text = L"Keyboard";
 			this->layoutMainForm->ResumeLayout(false);
@@ -637,5 +628,9 @@ namespace EyeTracking {
 			lblOutput->Text = text;
 		}
 	}
-	};
+	private: System::Void layoutMainForm_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	}
+private: System::Void lblOutput_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }
